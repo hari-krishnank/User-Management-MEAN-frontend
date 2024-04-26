@@ -1,0 +1,18 @@
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+
+.edit-button {
+    background-color: green;
+    color: white;
+}
+
+.delete-button {
+    background-color: rgb(241, 39, 39);
+    color: white; 
+}
+
+.button-space {
+    margin-left: 15px; 
+}

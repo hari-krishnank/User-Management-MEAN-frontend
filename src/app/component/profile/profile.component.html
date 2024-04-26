@@ -1,0 +1,18 @@
+<div class="profile-container">
+    <input type="file" name="image" #imageInput (change)="onFileSelected($event)">
+    <!-- <input type="file" name="image" #imageInput > -->
+    <button mat-raised-button color="primary" class="material-icons" (click)="uploadImage()">
+        <mat-icon>cloud_upload</mat-icon>Upload</button>
+    <br><br><br>
+    <div class="profile-avatar">
+        <!-- <img *ngIf="userProfile?.image" [src]='"http://localhost:5000/file/"+ userProfile.image'
+            alt="Profile Picture" width="100px" height="100px"> -->
+        <img *ngIf="storedProfileImage" [src]='"http://localhost:5000/file/" + storedProfileImage' alt="Profile Picture"
+            width="100px" height="100px">
+    </div>
+
+    <div class="profile-name">{{ userProfile?.username }}</div>
+    <br>
+    <div class="profile-job-title">Email : {{ userProfile?.email }}</div>
+    <div class="profile-job-title">Phone : {{ userProfile?.phone }}</div>
+</div>

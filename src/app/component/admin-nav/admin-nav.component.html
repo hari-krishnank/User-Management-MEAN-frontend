@@ -1,0 +1,36 @@
+
+<div *ngIf="isadminnavvisible">
+    <mat-toolbar color="primary" class="mat-elevation-z8">
+        <button (click)="drawer.toggle()" mat-icon-button>
+            <mat-icon>menu</mat-icon>
+        </button>
+        <span>CRUD APP</span>
+        <span class="example-spacer"></span>
+        <button (click)="onLogout()" mat-button *ngIf="authenticated">Logout</button>
+        
+    </mat-toolbar>
+    <mat-drawer-container autosize>
+        <mat-drawer #drawer opened="true" position="start" mode="side">
+            <mat-nav-list>
+                <mat-list-item>
+                    <button mat-button routerLink="/admin/dashboard"><mat-icon>dashboard</mat-icon>Dashboard</button>
+                </mat-list-item>
+                <mat-list-item>
+                    <button mat-button routerLink="/admin/userlist"><mat-icon>list</mat-icon>User List</button>
+                </mat-list-item>
+                <mat-list-item>
+                    <button mat-button routerLink="/admin/createuser" ><mat-icon>person_add</mat-icon>Create User</button>
+                </mat-list-item>
+            </mat-nav-list>
+        </mat-drawer>
+        <mat-drawer-content>
+            <div style="text-align: center;min-height: 600px;">
+                <router-outlet></router-outlet>
+            </div>
+        </mat-drawer-content>
+    </mat-drawer-container>
+</div>
+
+<div style="text-align: center;min-height: 600px;" *ngIf="!isadminnavvisible">
+    <router-outlet></router-outlet>
+</div>
